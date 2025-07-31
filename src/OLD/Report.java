@@ -1,4 +1,4 @@
-﻿package Train_250731;
+﻿package OLD;
 import java.util.Scanner;
 
 public class Report {
