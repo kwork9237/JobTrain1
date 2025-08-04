@@ -45,9 +45,19 @@ public class Main {
 
 	public static void writeBoard() {
 		BoardDTO board = new BoardDTO();
+		int iTemp;
 		
 		System.out.println("게시글 고유번호를 입력해 주세요.");
-		board.setBoardNum(scan.nextInt());
+		iTemp = scan.nextInt();
+		
+		//check for boardnum
+		if(!checkBoardNum(iTemp)) {
+			System.out.println("중복된 게시글 고유번호입니다.");
+			return;
+		}
+		
+		
+		board.setBoardNum(iTemp);
 		
 		System.out.println("제목을 입력해 주세요.");
 		board.updateName(scan.next());
@@ -161,8 +171,8 @@ public class Main {
 	}
 	
 	public static Boolean checkBoardNum(int boardNum) {
-		if(!boardList.isEmpty()) {
-			return true;
+		if(boardList.isEmpty()) {
+			return false;
 		}
 		
 		BoardDTO boardData = null;

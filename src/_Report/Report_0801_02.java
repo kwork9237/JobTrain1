@@ -1,6 +1,6 @@
 package _Report;
 
-public class Report_0802_02 {
+public class Report_0801_02 {
 
 	public static void main(String[] args) {
 		int[][] arr = {
