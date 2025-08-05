@@ -4,18 +4,35 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class MemberInfo {
+class MemberInfo1 {
 	private String name;
 	private int age;
 	private String email;
 	private String address;
 	
-	public MemberInfo(String name, int age, String email, String address) {
+//	public MemberInfo1(String name, int age, String email, String address) {
+//		this.name = name;
+//		this.age = age;
+//		this.email = email;
+//		this.address = address;
+//	}
+
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setAge(int age) {
 		this.age = age;
+	}
+
+	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 	
 	public void PrintMemberInfo() {
 		System.out.println("회원정보");
@@ -27,11 +44,10 @@ class MemberInfo {
 	}
 }
 
-
-public class Report_20250804_01 {
-	public static List<MemberInfo> members = new ArrayList<MemberInfo>();
+public class Report_20250805_01 {
+	public static List<MemberInfo1> members = new ArrayList<MemberInfo1>();
 	public static Scanner s = new Scanner(System.in);
-
+	
 	public static void main(String[] args) {
 
 		while(true) {
@@ -65,25 +81,31 @@ public class Report_20250804_01 {
 		System.out.println("99. 종료");
 	}
 	
-	public static MemberInfo InputMember() {
-		String name, email, address;
-		int age;
+	public static MemberInfo1 InputMember() {
+		MemberInfo1 m = new MemberInfo1();
 		
 		System.out.print("이름 입력 : ");
-		name = s.next();
+		m.setName(s.next());
 		
-		System.out.print("나이 입력 : ");
-		// string 들어가면 크래쉬남.
-		// try - catch 쓰거나 해야함.
-		age = s.nextInt();
+		while(true) {
+			try {
+				System.out.print("나이 입력 : ");
+				m.setAge(s.nextInt());
+				break;
+			}
+			catch(Exception e) {
+				System.out.println("정수만 입력 가능합니다.");
+				s.nextLine();
+			}
+		}
 		
 		System.out.print("메일 입력 : ");
-		email = s.next();
+		m.setEmail(s.next());
 		
 		System.out.print("주소 입력 : ");
-		address = s.next();
+		m.setAddress(s.next());
 		
-		return new MemberInfo(name, age, email, address);
+		return m;
 	}
 	
 	public static void PrintMemberInMembers() {
