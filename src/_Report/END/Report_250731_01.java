@@ -1,4 +1,4 @@
-package _Report;
+package _Report.END;
 
 import java.util.Scanner;
 

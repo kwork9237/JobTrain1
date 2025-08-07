@@ -1,4 +1,4 @@
-package _Report;
+package _Report.END;
 
 public class Report_250731_02 {
 	public static void main(String[] args) {

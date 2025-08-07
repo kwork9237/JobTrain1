@@ -1,6 +1,5 @@
-package _Report;
+package _Report.END;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Report_0801_01 {
